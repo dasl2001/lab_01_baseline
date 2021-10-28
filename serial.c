@@ -68,17 +68,17 @@ void print() //Skriver ut det lästa char.
 
 void store_command(char* buffer) //Lagrar tecken i en buffert tills vagnretur eller nyrad läses.
 {
-    int j = 0;
+    int x = 0;
     char previous_char;
     previous_char = read_char();
     print_char(previous_char);
-    while((previous_char != '\r' || previous_char != '\n') && j<49){
-        buffer[j]=previous_char;
-        j++;
+    while((previous_char != '\r' || previous_char != '\n') && x<49){
+        buffer[x]=previous_char;
+        x++;
         previous_char = read_char();
         print_char(previous_char);
     }
-    buffer[j]='\0';
+    buffer[x]='\0';
 }
 
 void execute_command(char* buffer) //Jämför bufferten med kommandon som ska köras.
