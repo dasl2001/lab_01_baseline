@@ -4,8 +4,7 @@ BIN = lab1# namn på output-binären
 SOURCES = \
 		  main.c \
 		  serial.c \
-		  led.c \
-
+		  led.c
 
 PORT = /dev/ttyS4 # Arduinons serieport — kan vara ttyACM1, kolla dmesg!
 
@@ -55,4 +54,4 @@ $(OBJS): makefile
 
 clean: # Rensa upp byggkatalogen
 	@echo " Cleaning...";
-	rm -f $(OUT) $(OBJS) *.map *.P *.out 
+	rm -f $(OUT) $(OBJS) *.map *.P *.out

@@ -14,9 +14,10 @@ void blinkLed() //Blå LED Blinkar
 
 void delay(unsigned long milliseconds) 
 {
-    while(milliseconds--){
+    while(milliseconds--)
+    {
         _delay_ms(1);
-        }
+    }
 }
 
 
@@ -37,10 +38,12 @@ void setLow(uint8_t* Register, uint8_t bit)
 
 void pinDirection(uint8_t* Register, Direction direction, uint8_t bit) //Ställer in nålriktning. Använder Enums.
 {
-    if(direction==INPUT){
+    if(direction==INPUT)
+    {
         setLow(Register, bit);
     }
-    if(direction==OUTPUT){
+    if(direction==OUTPUT)
+    {
         setHigh(Register, bit);
     }
 }
