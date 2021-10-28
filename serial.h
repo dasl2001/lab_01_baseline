@@ -7,4 +7,6 @@ void print_char(unsigned char data);
 void print_string(char* str);
 unsigned char read_char();
 void print();
+void store_command(char* buffer);
+void execute_command(char* buffer);
 #endif

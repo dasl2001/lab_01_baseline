@@ -2,11 +2,11 @@
 #include <util/delay.h>
 #include "led.h"
 
-void blinkLed() //Blå LED Blinkar 
+void blink_led() //Blå LED Blinkar 
 {
     while(1)
     {
-        toggleBit(&PORTB, PB1); 
+        toggle_bit(&PORTB, PB1); 
         delay(500);
     }
 }
@@ -21,30 +21,30 @@ void delay(unsigned long milliseconds)
 }
 
 
-void toggleBit(uint8_t* Register, uint8_t bit) 
+void toggle_bit(uint8_t* Register, uint8_t bit) 
 {
     *Register^=(1<<bit);
 }
 
-void setHigh(uint8_t* Register, uint8_t bit) 
+void set_high(uint8_t* Register, uint8_t bit) 
 {
     *Register|=(1<<bit);
 }
 
-void setLow(uint8_t* Register, uint8_t bit)
+void set_low(uint8_t* Register, uint8_t bit)
 {
     *Register&=~(1<<bit);
 }
 
-void pinDirection(uint8_t* Register, Direction direction, uint8_t bit) //Ställer in nålriktning. Använder Enums.
+void pin_direction(uint8_t* Register, Direction direction, uint8_t bit) //Ställer in nålriktning. Använder Enums.
 {
     if(direction==INPUT)
     {
-        setLow(Register, bit);
+        set_low(Register, bit);
     }
     if(direction==OUTPUT)
     {
-        setHigh(Register, bit);
+        set_high(Register, bit);
     }
 }
 
